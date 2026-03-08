@@ -44,11 +44,11 @@ public class ProductEntity{
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    private ProductCategoryEntity productCategory;
+    private ProductCategoryEntity productCategoryEntity;
 
-    @OneToMany(mappedBy = "ProductEntity", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "productEntity", cascade = CascadeType.ALL)
     private List<PricelistItemEntity> pricelistItems;
 
-    @OneToMany(mappedBy = "ProductEntity", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "productEntity", cascade = CascadeType.ALL)
     private List<OrderItemEntity> orderItems;
 }

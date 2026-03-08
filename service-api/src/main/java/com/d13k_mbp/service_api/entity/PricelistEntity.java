@@ -35,9 +35,9 @@ public class PricelistEntity {
     @Column(name = "updated_at", nullable = true)
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "PricelistEntity", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pricelistEntity", cascade = CascadeType.ALL)
     private List<PricelistItemEntity> pricelistItems;
 
-    @OneToMany(mappedBy = "PricelistEntity", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pricelistEntity", cascade = CascadeType.ALL)
     private List<OrderItemEntity> orderItems;
 }
