@@ -35,6 +35,6 @@ public class ProductCategoryEntity {
     @Column(name = "updated_at", nullable = true)
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "ProductCategoryEntity", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "productCategoryEntity", cascade = CascadeType.ALL)
     private List<ProductEntity> products;
 }

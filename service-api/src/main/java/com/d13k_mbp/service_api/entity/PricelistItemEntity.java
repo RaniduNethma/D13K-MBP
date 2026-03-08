@@ -26,9 +26,9 @@ public class PricelistItemEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
-    private ProductEntity product;
+    private ProductEntity productEntity;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pricelist_id")
-    private PricelistEntity pricelist;
+    private PricelistEntity pricelistEntity;
 }
