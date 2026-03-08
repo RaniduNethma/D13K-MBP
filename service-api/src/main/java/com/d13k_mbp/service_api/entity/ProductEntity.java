@@ -51,4 +51,7 @@ public class ProductEntity{
 
     @OneToMany(mappedBy = "productEntity", cascade = CascadeType.ALL)
     private List<OrderItemEntity> orderItems;
+
+    @OneToMany(mappedBy = "productEntity", cascade = CascadeType.ALL)
+    private List<ImageEntity> images;
 }
