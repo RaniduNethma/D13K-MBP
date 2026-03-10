@@ -12,6 +12,7 @@ import com.d13k_mbp.service_api.service.util.ByteCodeHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -51,12 +52,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public ResponseProductDTO findProductById(String productId) throws SQLException {
         ProductEntity selectedProduct = productRepository.findById(productId).orElseThrow(()->new EntryNotFoundException("Product Not Found!"));
         return toResponseProductDTO(selectedProduct);
     }
 
     @Override
+    @Transactional
     public ProductPaginateResponseDTO findAllProducts(int page, int size, String searchText) throws SQLException {
         return ProductPaginateResponseDTO.builder()
                 .productDataCount(productRepository.countAllProducts(searchText))
@@ -72,6 +75,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public ProductPaginateResponseDTO findAllProductsByCategoryId(int page, int size, String categoryId, String searchText) throws SQLException {
         return ProductPaginateResponseDTO.builder()
                 .productDataCount(productRepository.countAllProductsByCategoryId(categoryId, searchText))
