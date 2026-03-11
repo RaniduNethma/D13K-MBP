@@ -23,7 +23,7 @@ public class OrderItemEntity {
     private BigDecimal pricePerUnit;
 
     @Column(name = "item_discount", nullable = false)
-    private int ItemDiscount;
+    private int itemDiscount;
 
     @Column(name = "item_quantity", nullable = false)
     private BigInteger itemQuantity;

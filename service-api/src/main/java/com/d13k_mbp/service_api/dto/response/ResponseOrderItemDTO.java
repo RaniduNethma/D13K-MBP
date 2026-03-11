@@ -18,6 +18,6 @@ public class ResponseOrderItemDTO {
     private BigDecimal pricePerUnit;
     private int itemDiscount;
     private BigInteger itemQuantity;
-    private BigInteger totalPrice;
+    private BigDecimal totalPrice;
     private LocalDateTime createdAt;
 }

@@ -10,10 +10,8 @@ import java.math.BigInteger;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RequestOrderItemDTO {
-    private BigDecimal pricePerUnit;
     private int itemDiscount;
     private BigInteger itemQuantity;
-    private BigInteger totalPrice;
     private String productId;
     private String orderId;
     private String pricelistId;
