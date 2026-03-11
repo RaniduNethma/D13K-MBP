@@ -3,8 +3,14 @@ package com.d13k_mbp.service_api.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Lob;
+import lombok.*;
 
 @Embeddable
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class FileFormatter {
     @Lob
     @Column(name = "file_name")
