@@ -5,6 +5,7 @@ import com.d13k_mbp.service_api.enums.PaymentMethodEnum;
 import com.d13k_mbp.service_api.enums.PaymentStatusEnum;
 import lombok.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Getter
 @Setter
@@ -13,9 +14,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class RequestOrderDTO {
     private OrderStatusEnum orderStatus;
-    private BigDecimal subTotal;
-    private BigDecimal grandTotal;
     private int orderDiscount;
     private PaymentStatusEnum paymentStatus;
     private PaymentMethodEnum paymentMethod;
+    private List<RequestOrderItemDTO> orderItems;
 }
