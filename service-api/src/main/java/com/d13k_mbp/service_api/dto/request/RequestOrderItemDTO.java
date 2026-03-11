@@ -13,6 +13,5 @@ public class RequestOrderItemDTO {
     private int itemDiscount;
     private BigInteger itemQuantity;
     private String productId;
-    private String orderId;
     private String pricelistId;
 }
