@@ -8,12 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface OrderRepository extends JpaRepository<OrderEntity, String> {
 
-//    @Query(value = "SELECT * FROM orders WHERE product_name LIKE %?1% AND is_active=true", nativeQuery=true)
-//    public Page<OrderEntity> searchAllOrders(String searchText, Pageable pageable);
-//
-//    @Query(value = "SELECT COUNT(*) FROM orders WHERE order_name LIKE %?1% AND is_active=true", nativeQuery = true)
-//    public long countAllOrders(String searchText);
-
     @Query(value = "SELECT * FROM orders WHERE CAST(order_status AS VARCHAR) LIKE %?1%", nativeQuery = true)
     public Page<OrderEntity> searchAllOrders(String searchText, Pageable pageable);
 
