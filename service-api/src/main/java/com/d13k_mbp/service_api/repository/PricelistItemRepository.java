@@ -16,9 +16,7 @@ public interface PricelistItemRepository extends JpaRepository<PricelistItemEnti
     @Query(value = "DELETE FROM pricelist_item WHERE pricelist_id = :pricelistId", nativeQuery = true)
     void deleteAllByPricelistId(@Param("pricelistId") String pricelistId);
 
-    @Modifying
-    @Transactional
-    @Query(value = "SELECT p FROM pricelist_item p WHERE p.product.product_id = :productId AND p.pricelist.pricelist_id = :pricelistId", nativeQuery = true)
+    @Query(value = "SELECT * FROM pricelist_item WHERE product_id = :productId AND pricelist_id = :pricelistId", nativeQuery = true)
     Optional<PricelistItemEntity> findByProductIdAndPricelistId(
             @Param("productId") String productId,
             @Param("pricelistId") String pricelistId);
